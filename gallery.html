@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px  30px;
+    }
+    img{
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 70px;
+    }
+    .row{
+        display: flex;
+        gap: 15px;
+    }
+    h1{
+        background-color: blue;
+        color: white;
+        font-size: 30px;
+        padding: 20px 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 15px;
+    }
+    h1:hover{
+        background: brown;
+    }
+    .gallery{
+        display: flex;
+    }
+    .col{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    button{
+        padding: 15px 50px;
+        background-color: brown;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+    }
+    button:hover{
+        background-color: rgb(36, 36, 128);
+    }
+
+
+    @media screen and (max-width:750px){
+        .row{
+            flex-direction: column;
+        }
+        h1{
+            font-size: 50px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="gallery">
+            <h1>Image Gallery</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2022/02/ng4.png" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/Untitled8.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/Untitled4.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/Untitled9.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/Untitled11.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/Untitled12.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/4.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/5.jpg" alt="">
+            </div>
+            <div class="col">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/7.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/8.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/18.jpg" alt="">
+                <img src="https://www.gaikwadcoachingclass.com/wp-content/uploads/2020/07/3.jpg" alt="">
+            </div>
+        </div>
+        <button>Load More</button>
+    </div>
+</body>
+</html>
