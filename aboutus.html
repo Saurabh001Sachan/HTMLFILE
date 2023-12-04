@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+    }
+    header{
+        width: 100%;
+        height: 10vh;
+        background-size: 50%  90%;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+    nav{
+        width: 100%;
+        height: 70px;
+        padding: 0  70px;
+        background: rgb(8, 46, 8);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo{
+        font-weight: bold;
+        font-size: 2em;
+        letter-spacing: 2px;
+        font-style: italic;
+    }
+    .logo span{
+        color: brown;
+    }
+    .menu a{
+        text-decoration: none;
+        color: white;
+        padding: 10px  20px;
+        background-color: rgb(56, 54, 54);
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .menu a:hover{
+        background-color: chocolate;
+    }
+    .menu a:last-child{
+        background: brown;
+        color: white;
+        border-radius: 10px;
+    }
+    .about{
+        width: 100%;
+        padding: 78px 0px;
+        background-color: rgb(14, 13, 13);
+    }
+    .about img{
+        width: 600px;
+        height: 500px;
+    }
+    .about-text{
+        width: 470px;
+    }
+    .main{
+        width: 1130px;
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .about-text h1{
+        color: white;
+        font-size: 80px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+    .about-text h5{
+        color: white;
+        font-size: 25px;
+        text-transform: capitalize;
+        margin-bottom: 25px;
+        letter-spacing: 8px;
+    }
+    span{
+        color: brown;
+    }
+    .about-text p{
+        color: white;
+        letter-spacing: 1px;
+        line-height: 20px;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+    button{
+        background: green;
+        color: white;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 13px 30px;
+        border-radius: 30px;
+        transition: 0.4s;
+    }
+    button:hover{
+        background: transparent;
+        border: 2px solid green;
+        cursor: pointer;
+    }
+    footer{
+        position: bottom;
+        background: #140B5C;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+      }
+      footer .content{
+        max-width: 1250px;
+        margin: auto;
+        padding: 30px 40px 40px 40px;
+      }
+      footer .content .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+      }
+      .content .top .logo-details{
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+      }
+      .content .top .media-icons{
+        display: flex;
+      }.content .top .media-icons a{
+        height: 40px;
+        width: 40px;
+        margin: 0 8px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 17px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+      }
+      .top .media-icons a:nth-child(1){
+        background: #4267B2;
+      }
+      .top .media-icons a:nth-child(1):hover{
+        color: #4267B2;
+        background: #fff;
+      }
+      .top .media-icons a:nth-child(2){
+        background: #1DA1F2;
+      }
+      .top .media-icons a:nth-child(2):hover{
+        color: #1DA1F2;
+        background: #fff;
+      }
+      .top .media-icons a:nth-child(3){
+        background: #E1306C;
+      }
+      .top .media-icons a:nth-child(3):hover{
+        color: #E1306C;
+        background: #fff;
+      }
+      .top .media-icons a:nth-child(4){
+        background: #0077B5;
+      }
+      .top .media-icons a:nth-child(4):hover{
+        color: #0077B5;
+        background: #fff;
+      }
+      .top .media-icons a:nth-child(5){
+        background: #FF0000;
+      }
+      .top .media-icons a:nth-child(5):hover{
+        color: #FF0000;
+        background: #fff;
+      }
+      footer .content .link-boxes{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      footer .content .link-boxes .box{
+        width: calc(100% / 5 - 10px);
+      }
+      .content .link-boxes .box .link_name{
+        color: #fff;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .link-boxes .box .link_name::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 35px;
+        background: #fff;
+      }
+      .content .link-boxes .box li{
+        margin: 6px 0;
+        list-style: none;
+      }
+      .content .link-boxes .box li a{
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: all 0.4s ease
+      }
+      .content .link-boxes .box li a:hover{
+        opacity: 1;
+        text-decoration: underline;
+      }
+      .content .link-boxes .input-box{
+        margin-right: 55px;
+      }
+      .link-boxes .input-box input{
+        height: 40px;
+        width: calc(100% + 55px);
+        outline: none;
+        border: 2px solid #AFAFB6;
+        background: #140B5C;
+        border-radius: 4px;
+        padding: 0 15px;
+        font-size: 15px;
+        color: #fff;
+        margin-top: 5px;
+      }
+      .link-boxes .input-box input::placeholder{
+        color: #AFAFB6;
+        font-size: 16px;
+      }
+      .link-boxes .input-box input[type="button"]{
+        background: #fff;
+        color: #140B5C;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 4px 0;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: all 0.4s ease;
+      }
+      .input-box input[type="button"]:hover{
+        opacity: 1;
+      }
+      footer .bottom-details{
+        width: 100%;
+        background: #0F0844;
+      }
+      footer .bottom-details .bottom_text{
+        max-width: 1250px;
+        margin: auto;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .bottom-details .bottom_text span,
+      .bottom-details .bottom_text a{
+        font-size: 14px;
+        font-weight: 300;
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+      }
+      .bottom-details .bottom_text a:hover{
+        opacity: 1;
+        text-decoration: underline;
+      }
+      .bottom-details .bottom_text a{
+        margin-right: 10px;
+      }
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span>Y</span>O<SPAN>U</SPAN>T<span>H</span></div>
+                <div class="menu">
+                <a href="coachingfront.html">Home</a>
+                <a href="course.html">Course</a>
+                <a href="services.html">Services</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="login.html">Sign in</a>
+                </div>
+        </nav>
+    </header>
+    <section class="about">
+        <div class="main">
+            <img src="about.jpg">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <h5>Education <span>& Achieve</span></h5>
+                <p>Sachan Coaching Classes a well known, coaching institute running successfully since last 23 years in Central Kanpur. <br>We believe in providing all deserving students in Kanpur and around Fatehpur with the best curriculum and pedagogy <br>along with the highest quality of education in coaching the students for 11 and 12(science), 8-10 (state and CBSE) and <br>entrance Exam(NEET/JEE)
+                    Sachan Coaching Classes brings out of the latent strengths of every student so that they<br> feel motivated and applauded for their strengths and explore the greater depth of their potential.<br><br></p>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+    </section>
+</body>
+</header> 
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">YOUTH</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Center</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">Air Conditioning </a></li>
+          <li><a href="#">Wi-Fi Access</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">Expirenced Teachers</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">Science</a></li>
+          <li><a href="#">Commerce</a></li>
+          <li><a href="#">Humanties</a></li>
+          <li><a href="#">Computer</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright © 2021 <a href="#">Coaching Center.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</html>
