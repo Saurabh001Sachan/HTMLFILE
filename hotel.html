@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    body{
+        min-height: 100vh;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    h1,
+    h2{
+        color:rgb(94, 91, 91);
+    }
+    h3{
+        color: rgb(94, 92, 92);
+    }
+    .btn{
+        background: palevioletred;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+    }
+    .btn:hover{
+        color: palevioletred;
+        background: white;
+        padding: 3px 8px;
+        border: 2px solid palevioletred;
+    }
+    .side-menu{
+        position: fixed;
+        background: coral;
+        width: 20vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .side-menu .brand-name{
+        height: 10vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .side-menu li{
+        font-size: 24px;
+        padding: 10px 40px;
+        color: white;
+        display: flex;
+    }
+    .side-menu li:hover{
+        background: green;
+        color: coral;
+    }
+    .side-menu li img{
+        width: 30px;
+        height: 30px;
+    }
+    .container{
+        position: absolute;
+        width: 80vw;
+        right: 0;
+        height: 100vh;
+    }
+    .container  .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70vw;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px  8px 0 rgba(0 ,0,0,0.2);
+    }
+    .container .header .nav{ 
+        width: 90%;
+        display: flex;
+        align-items: center;
+    }
+     .container .header .nav .search{
+        flex: 3;
+        background: green;
+        justify-content: center;
+    }
+     .container .header .nav .search input[type=text]{
+        border: none;
+        background: white;
+        padding: 10px;
+        width: 50%;
+    }
+     .container .header .nav .search button{
+        width: 40px;
+        height: 40px;
+        border: none;
+     }
+     .container .header .nav .search button img{
+        width: 30px;
+        height: 30px;
+     }
+    .container .header .nav .user{
+        flex: 1;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+    .container .header .nav .user img{
+        width: 40px;
+        height: 40px;
+    }
+    .container .header .nav .user .img-case{
+        position: relative;
+        width: 50px;
+        height: 50px;
+    }
+    .container .header .nav .user .img-case .img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .container .content{
+        position: relative;
+        margin-top: 10vh;
+        min-height: 90vh;
+    }
+    .container .content .cards{
+        display: flex;
+        padding: 20px 15px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .container .content .cards .card{
+        width: 150px;
+        height: 150px;
+        background: white;
+        margin: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: 0 4px 8px 0 rgba(0 ,0,0,0.2);
+    }
+    .container .content .content-2{
+        min-height: 60vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .container .content .content-2 .recent-payments{
+        min-height: 50vh;
+        flex: 5;
+        background: white;
+        margin: 0 25px 25px 25px;
+        box-shadow: 0 4px 8px 0 rgba(0 ,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+    }
+    .container .content .content-2 .new-students{
+        flex: 2;
+        background: white;
+        min-height: 50vh;
+        margin: 0 25px;
+        box-shadow: 0 4px 8px 0 rgba(0 ,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+    }
+    .container .content .content-2 .new-students table td:nth-child(1) img{
+        height: 18px;
+        width: 18px;
+    }
+    .title{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 15px 10px;
+        border-bottom: 2px solid #999;
+    }
+    table{
+        padding: 10px;
+    }
+    th,td{
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>MANAGEMENT</h1>
+        </div>
+        <ul>
+            <a href="#"><li><img src="dashboardicon.png" alt=" "> &nbsp; Dashboard</li></a>
+            <a href="#"><li><img src="studenticon.png" alt=" "> &nbsp;&nbsp;Students</li></a>
+            <a href="#"><li><img src="teachericon.png" alt=" "> &nbsp;&nbsp;Teachers</li></a>
+            <a href="#"><li><img src="schoolicon.png" alt="  "> &nbsp;&nbsp;Schools</li></a>
+            <a href="#"><li><img src="incomeicon.png" alt=" "> &nbsp;&nbsp;Income</li></a>
+            <a href="#"><li><img src="helpicon.png" alt=" "> &nbsp;&nbsp;Help</li></a>
+            <a href="#"><li><img src="settingicon.png" alt=" "> &nbsp;&nbsp;Setting</li></a>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="search.png" alt=" "></button>
+                </div>
+                <div class="user">
+                    <a href=" #" class="btn">Add New</a>
+                    <img src="notification.png" alt="">
+                    <div class="img-case">
+                        <img src="boyicon.png" alt=" ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>500</h1>
+                        <h3>Students</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="studenticon.png" alt=" ">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>10</h1>
+                        <h3>Teachers</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="teachericon.png" alt=" ">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>1</h1>
+                        <h3>Coaching</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="schoolicon.png" alt=" ">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>250000</h1>
+                        <h3>Income</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="incomeicon.png" alt=" ">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Recent Payments</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>School</th>
+                            <th>Amount</th>
+                            <th>Option</th>
+                        </tr>
+                        <tr>
+                            <td>Jatin Kumar</td>
+                            <td>Expert Classes</td>
+                            <td>&#x20B9;500</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Virat Sachan</td>
+                            <td>Expert Classes</td>
+                            <td>&#x20B9;500</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Prachi Singh</td>
+                            <td>Expert Classes</td>
+                            <td>&#x20B9;500</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Navya Sachan</td>
+                            <td>Expert Classes</td>
+                            <td>&#x20B9;500</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Apurva Singh</td>
+                            <td>Expert Classes</td>
+                            <td>&#x20B9;500</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="new-students">
+                    <div class="title">
+                        <h2>New Students</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Profile</th>
+                            <th>Name</th>
+                            <th>Option</th>
+                        </tr>
+                        <tr>
+                            <td><img src="face.png" alt=" "></td>
+                            <td>Aman Kumar</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="face.png" alt=" "></td>
+                            <td>Rashmi Singh</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="face.png" alt=" "></td>
+                            <td>Divya Pal</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="face.png" alt=" "></td>
+                            <td>Vimal Kumar</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="face.png" alt=" "></td>
+                            <td>Sneha Tiwari</td>
+                            <td><a href=" #" class="btn">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
